@@ -9,10 +9,11 @@
     "license": "MIT",
     "require": {
         "php": "^7.2",
+        "doctrine/orm": "*",
         "fideloper/proxy": "^4.0",
+        "laravel-doctrine/orm": "1.5.*",
         "laravel/framework": "^6.0",
-        "laravel/tinker": "^1.0",
-        "doctrine/orm": "*"
+        "laravel/tinker": "^1.0"
     },
     "require-dev": {
         "facade/ignition": "^1.4",

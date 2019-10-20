@@ -1,10 +1,7 @@
 <?php
 
-require_once "bootstrap.php";
+require_once '/Users/kevinschuette/Development/PHP_Projects/BotBackend/bootstrap.php';
 
 use Doctrine\ORM\Tools\Console\ConsoleRunner;
-
-// replace with mechanism to retrieve EntityManager in your app
-$entityManager = GetEntityManager();
 
 return ConsoleRunner::createHelperSet($entityManager);
