@@ -20,7 +20,7 @@ class GoodMorningController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -52,7 +52,7 @@ class GoodMorningController extends Controller
      */
     public function show($id)
     {
-        //
+        echo $id;
     }
 
     /**

@@ -52,7 +52,7 @@ class MessagesController extends Controller
      */
     public function show($id)
     {
-        //
+        echo $id;
     }
 
     /**
