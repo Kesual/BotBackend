@@ -52,6 +52,7 @@ class MessagesController extends Controller
      */
     public function show($id)
     {
+        $array = [['name' => 'Peter'],['name' => 'Hans']];
         echo $id;
     }
 
