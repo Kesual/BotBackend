@@ -14,7 +14,8 @@
         "laravel-doctrine/orm": "1.5.*",
         "laravel/framework": "^6.0",
         "laravel/tinker": "^1.0",
-        "ext-json": "*"
+        "ext-json": "*",
+        "barryvdh/laravel-cors": "*"
     },
     "require-dev": {
         "facade/ignition": "^1.4",

@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Entities\Messages;
 use App\Repositories\MessagesRepository as repo;
 use Illuminate\Http\Request;
+
+// php artisan serve --host=192.168.178.21 --port=8001
 
 class MessagesController extends Controller
 {
@@ -20,7 +23,7 @@ class MessagesController extends Controller
      */
     public function index()
     {
-        //
+        echo "Yooooooo";
     }
 
     /**
@@ -37,11 +40,16 @@ class MessagesController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return array
      */
     public function store(Request $request)
     {
-        //
+        $content = $request->input('data');
+        $newMsg = new Messages();
+        $newMsg->setMessage($content);
+        $this->repo->create($newMsg);
+
+        return  $array = [['value' => $request->input('data')]];
     }
 
     /**
@@ -52,8 +60,7 @@ class MessagesController extends Controller
      */
     public function show($id)
     {
-        $array = [['name' => 'Peter'],['name' => 'Hans']];
-        echo $id;
+        return  $array = [['name' => 'Peter'],['name' => 'Hans']];
     }
 
     /**

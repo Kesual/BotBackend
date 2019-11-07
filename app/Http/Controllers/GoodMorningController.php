@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Entities\GoodMorning;
 use App\Repositories\GoodMorningRepository as repo;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class GoodMorningController extends Controller
 {
@@ -37,11 +39,18 @@ class GoodMorningController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return array
+     *
+     * maybe later \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //
+        $content = $request->input('data');
+        $newMsg = new GoodMorning();
+        $newMsg->setMessage($content);
+        $this->repo->create($newMsg);
+
+        return  $array = [['value' => $request->input('data')]];
     }
 
     /**
