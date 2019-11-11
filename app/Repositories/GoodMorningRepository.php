@@ -7,6 +7,8 @@ use App\Entities\GoodMorning;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\OptimisticLockException;
 use Doctrine\ORM\ORMException;
+use JsonSerializable;
+use LaravelDoctrine\ORM\Serializers\JsonSerializer;
 
 class GoodMorningRepository {
 
@@ -70,4 +72,9 @@ class GoodMorningRepository {
         } catch (ORMException $e) {
         }
     }
+
+    public function getAll() {
+        return $this->em->getRepository($this->class)->findAll();
+    }
+
 }

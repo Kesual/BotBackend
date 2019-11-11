@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 /** @ORM\Entity
  *  @ORM\Table(name="Messages", options={"charset":"utf8mb4", "collate":"utf8mb4_unicode_ci"})
  */
-class Messages {
+class Messages implements \JsonSerializable {
 
     /**
      * @ORM\Id
@@ -51,5 +51,20 @@ class Messages {
     public function setMessage($message): void
     {
         $this->message = $message;
+    }
+
+    /**
+     * Specify data which should be serialized to JSON
+     * @link https://php.net/manual/en/jsonserializable.jsonserialize.php
+     * @return mixed data which can be serialized by <b>json_encode</b>,
+     * which is a value of any type other than a resource.
+     * @since 5.4.0
+     */
+    public function jsonSerialize()
+    {
+        return array(
+            'id' => $this->id,
+            'message' => $this->message,
+        );
     }
 }
