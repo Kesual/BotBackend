@@ -22,7 +22,11 @@ class GoodMorningController extends Controller
      */
     public function index()
     {
+        $rspns = new Response();
 
+        // TODO: WIP index mit dd() und chrome api test
+
+        return $rspns;
     }
 
     /**
