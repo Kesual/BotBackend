@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use App\Entities\Messages;
 use App\Repositories\MessagesRepository as repo;
 use Illuminate\Http\Request;
-
-// php artisan serve --host=192.168.178.21 --port=8001
+use Illuminate\Http\Response;
 
 class MessagesController extends Controller
 {
@@ -23,7 +22,9 @@ class MessagesController extends Controller
      */
     public function index()
     {
-        echo "Yooooooo";
+        $rspns = new Response();
+        $input = $this->repo->getAll();
+        return $rspns->setContent(json_encode($input));
     }
 
     /**

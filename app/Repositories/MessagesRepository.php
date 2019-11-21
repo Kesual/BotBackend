@@ -70,4 +70,8 @@ class MessagesRepository {
         } catch (ORMException $e) {
         }
     }
+
+    public function getAll() {
+        return $this->em->getRepository($this->class)->findAll();
+    }
 }
